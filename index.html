@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MindCareAI Dashboard</title>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>MindCareAI Dashboard</h1>
+            <button id="dark-mode-toggle" class="dark-mode-toggle">Toggle Dark Mode</button>
+            <link rel="stylesheet" href="./index.css">
+        </header>
+        <div class="dashboard">
+            <div class="card">
+                <h2>Mental Health Survey</h2>
+                <form id="survey-form">
+                    <input type="text" placeholder="Name" required>
+                    <input type="number" placeholder="Age" required min="1" max="120">
+                    <select required>
+                        <option value="">Select Gender</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="other">Other</option>
+                    </select>
+                    <textarea placeholder="Describe your current mental state..." required></textarea>
+                    <button type="submit">Submit Survey</button>
+                </form>
+            </div>
+            <div class="card">
+                <h2>Prediction Results</h2>
+                <div id="prediction-results">
+                    <!-- Prediction results zizaza muri ino division -->
+                </div>
+            </div>
+            <div class="card">
+                <h2>Data Visualization</h2>
+                <div id="data-visualization">
+                    <!-- Data visualization zizaza hano muri ino division-->
+                </div>
+            </div>
+            <div class="card">
+                <h2>AI Insights</h2>
+                <div id="ai-insights">
+                    <input type="text" id="ai-query" placeholder="Ask a question...">
+                    <button id="voice-input">🎤</button>
+                    <button id="ai-submit">Get Insights</button>
+                    <div id="ai-response"></div>
+                </div>
+            </div>
+            <div class="card">
+                <h2>Feedback</h2>
+                <form id="feedback-form">
+                    <textarea placeholder="Your feedback is valuable to us..." required></textarea>
+                    <button type="submit">Submit Feedback</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="./index.js"></script>
+   
+</body>
+</html>
