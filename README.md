@@ -1,7 +1,6 @@
 # MindCareAI: Empowering Mental Health Through Data Science
 
 ## Project Overview
-
 *MindCareAI* is an innovative platform developed to analyze, predict, and provide actionable insights into mental health trends in Rwanda. Using advanced AI-driven analytics and user-friendly visualizations, it supports mental health professionals, policymakers, educators, and individuals in understanding and addressing mental health challenges effectively.
 
 ## Problem Statement
