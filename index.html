@@ -4,49 +4,62 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MindCareAI Dashboard</title>
+    <link rel="stylesheet" href="./index.css">
 </head>
 <body>
     <div class="container">
         <header>
             <h1>MindCareAI Dashboard</h1>
-            <button id="dark-mode-toggle" class="dark-mode-toggle">Toggle Dark Mode</button>
-            <link rel="stylesheet" href="./index.css">
+            <div class="header-controls">
+                <div id="model-indicator" class="model-indicator">Using: Groq</div>
+                <button id="model-toggle" class="model-toggle">Switch to Gemini</button>
+                <button id="dark-mode-toggle" class="dark-mode-toggle">Toggle Dark Mode</button>
+            </div>
         </header>
         <div class="dashboard">
             <div class="card">
                 <h2>Mental Health Survey</h2>
                 <form id="survey-form">
-                    <input type="text" placeholder="Name" required>
-                    <input type="number" placeholder="Age" required min="1" max="120">
-                    <select required>
+                    <input type="text" name="name" placeholder="Name" required>
+                    <input type="number" name="age" placeholder="Age" required min="1" max="120">
+                    <select name="gender" required>
                         <option value="">Select Gender</option>
                         <option value="male">Male</option>
                         <option value="female">Female</option>
                         <option value="other">Other</option>
                     </select>
-                    <textarea placeholder="Describe your current mental state..." required></textarea>
+                    <textarea name="mental_state" placeholder="Describe your current mental state..." required></textarea>
                     <button type="submit">Submit Survey</button>
                 </form>
             </div>
             <div class="card">
                 <h2>Prediction Results</h2>
                 <div id="prediction-results">
-                    <!-- Prediction results zizaza muri ino division -->
+                    <!-- Prediction results will appear here -->
+                    <p class="placeholder">Complete the survey to see your results</p>
                 </div>
             </div>
             <div class="card">
                 <h2>Data Visualization</h2>
                 <div id="data-visualization">
-                    <!-- Data visualization zizaza hano muri ino division-->
+                    <!-- Data visualization will appear here -->
                 </div>
             </div>
             <div class="card">
                 <h2>AI Insights</h2>
                 <div id="ai-insights">
-                    <input type="text" id="ai-query" placeholder="Ask a question...">
-                    <button id="voice-input">🎤</button>
-                    <button id="ai-submit">Get Insights</button>
-                    <div id="ai-response"></div>
+                    <div class="input-group">
+                        <input type="text" id="ai-query" placeholder="Ask a question about mental health...">
+                        <button id="voice-input" title="Voice input"><span class="icon">🎤</span></button>
+                        <button id="ai-submit">Get Insights</button>
+                    </div>
+                    <div id="loading-indicator" class="loading-indicator hidden">
+                        <div class="spinner"></div>
+                        <span>Processing...</span>
+                    </div>
+                    <div id="ai-response">
+                        <p class="placeholder">Ask a question to get AI-powered insights</p>
+                    </div>
                 </div>
             </div>
             <div class="card">
@@ -60,7 +73,6 @@
     </div>
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="./index.js"></script>
-   
+    <script type="module" src="./index.js"></script>
 </body>
 </html>
